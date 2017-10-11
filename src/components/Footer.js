@@ -7,10 +7,10 @@ export default class Footer extends Component {
   }
 
   render() {
-    return React.createElement(
-      'footer',
-      null,
-      React.createElement('h4', null, this.footer),
+    return (
+      <footer>
+        <h4>{this.footer}</h4>
+      </footer>
     )
   }
 }
