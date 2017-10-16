@@ -4,7 +4,11 @@ import PropTypes from 'prop-types'
 export default class Article extends Component {
   constructor() {
     super()
-    this.state = {}
+    this.state = { toggle: false }
+  }
+
+  toggle() {
+    this.setState({ toggle: !this.state.toggle })
   }
 
   render() {
@@ -12,7 +16,8 @@ export default class Article extends Component {
       <article>
         <h2>{this.props.title}</h2>
         <div>
-          {this.props.children}
+          {(this.state.toggle) ? this.props.children : null}
+          <button onClick={() => this.toggle()}>TOGGLE</button>
         </div>
       </article>
     )
