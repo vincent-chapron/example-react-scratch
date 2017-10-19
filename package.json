@@ -4,6 +4,7 @@
   "description": "This is an example of react from scratch",
   "scripts": {
     "build": "webpack",
+    "serve": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
