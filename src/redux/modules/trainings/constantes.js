@@ -1,0 +1,2 @@
+export const GET_TRAININGS = 'GET_TRAININGS'
+export const GET_TRAINING = 'GET_TRAINING'
