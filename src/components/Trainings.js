@@ -3,6 +3,10 @@ import { connect } from 'react-redux'
 import { getTrainings } from '../redux/modules/trainings/actions'
 
 class Trainings extends Component {
+  componentDidMount() {
+    this.props.getTrainings()
+  }
+
   render() {
     return (
       <section>
