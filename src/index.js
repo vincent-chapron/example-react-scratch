@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom'
 
 import createStore from './redux'
 import Header from './components/Header'
@@ -28,11 +28,13 @@ ReactDOM.render(
         <ul>
           <li><Link to="/trainings">trainings</Link></li>
           <li><Link to="/article">article</Link></li>
+          <li><a href="http://openska.com">Openska</a></li>
         </ul>
         <Switch>
           <Route path="/trainings/:id" component={Training}/>
           <Route path="/trainings" component={Trainings} />
           <Route path="/article" component={ArticleRoute}/>
+          <Redirect from="/(.+)" to="/" />
         </Switch>
         <Footer />
       </div>
