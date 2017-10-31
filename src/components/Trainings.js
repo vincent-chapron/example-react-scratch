@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getTrainings } from '../redux/modules/trainings/actions'
+import { getTrainings, getTraining } from '../redux/modules/trainings/actions'
 
 class Trainings extends Component {
   componentDidMount() {
@@ -13,9 +13,10 @@ class Trainings extends Component {
         <h2>Trainings</h2>
         <div>
           {this.props.trainings.all.map((training, i) => (
-            <div key={i}>{training}</div>
+            <div key={i} onClick={this.props.getTraining}>{training}</div>
           ))}
         </div>
+        <h4>current : {this.props.trainings.current}</h4>
       </section>
     )
   }
@@ -25,4 +26,4 @@ function mapStateToProps({ trainings }) {
   return { trainings }
 }
 
-export default connect(mapStateToProps, { getTrainings })(Trainings)
+export default connect(mapStateToProps, { getTrainings, getTraining })(Trainings)

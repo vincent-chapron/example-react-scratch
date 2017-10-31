@@ -10,8 +10,12 @@ export function getTrainings() {
 }
 
 export function getTraining() {
-  return {
-    type: GET_TRAINING,
-    payload: null,
+  return dispatch => {
+    setTimeout(() => {
+      dispatch({
+        type: GET_TRAINING,
+        payload: 'Docker',
+      })
+    }, 1000)
   }
 }
