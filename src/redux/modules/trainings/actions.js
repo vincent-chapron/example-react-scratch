@@ -3,7 +3,9 @@ import { GET_TRAININGS, GET_TRAINING } from './constantes'
 export function getTrainings() {
   return {
     type: GET_TRAININGS,
-    payload: ['Docker', 'ReactJS', 'NodeJS'],
+    payload: new Promise(resolve => {
+      setTimeout(() => resolve(['Docker', 'ReactJS', 'NodeJS']), 2000)
+    }),
   }
 }
 
