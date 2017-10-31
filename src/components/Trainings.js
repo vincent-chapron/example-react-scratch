@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getTrainings, getTraining } from '../redux/modules/trainings/actions'
 
+const Translate = require('react-redux-i18n').Translate
+
 class Trainings extends Component {
   componentDidMount() {
     this.props.getTrainings()
@@ -10,7 +12,7 @@ class Trainings extends Component {
   render() {
     return (
       <section>
-        <h2>Trainings</h2>
+        <h2><Translate value="trainings.title"/></h2>
         <div>
           {this.props.trainings.all.map((training, i) => (
             <div key={i} onClick={this.props.getTraining}>{training}</div>
