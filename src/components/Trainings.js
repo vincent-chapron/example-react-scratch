@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Field, reduxForm } from 'redux-form'
+import CreateTraining from './CreateTraining'
 import { getTrainings, getTraining } from '../redux/modules/trainings/actions'
 
 const Translate = require('react-redux-i18n').Translate
@@ -19,6 +21,7 @@ class Trainings extends Component {
           ))}
         </div>
         <h4>current : {this.props.trainings.current}</h4>
+        <CreateTraining onSubmit={values => console.log(values)} />
       </section>
     )
   }
